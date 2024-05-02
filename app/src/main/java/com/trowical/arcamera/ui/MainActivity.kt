@@ -1,14 +1,17 @@
 package com.trowical.arcamera.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.KeyEvent
 import androidx.activity.OnBackPressedCallback
+import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.FirebaseApp
+import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.crashlytics.FirebaseCrashlytics
 import com.trowical.arcamera.adapter.ViewPagerAdapter
-import com.trowical.arcamera.utils.checkPermissions
 import com.trowical.arcamera.databinding.ActivityMainBinding
 import com.trowical.arcamera.ui.navigation.CameraFragment
 import com.trowical.arcamera.utils.Data
+import com.trowical.arcamera.utils.checkPermissions
 import com.trowical.arcamera.utils.message
 
 class MainActivity : AppCompatActivity() {
@@ -20,6 +23,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        FirebaseApp.initializeApp(this)
+        FirebaseAnalytics.getInstance(this).setAnalyticsCollectionEnabled(true)
+        FirebaseCrashlytics.getInstance().setCrashlyticsCollectionEnabled(true)
 
         checkPermissions { granted ->
             if (granted) {

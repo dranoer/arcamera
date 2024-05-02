@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">AR Camera</string>
 
-    <string name="deep_ar_key" translatable="false">YOUR_KEY</string>
+    <string name="deep_ar_key" translatable="false">d492e4212d8472bbef8f584c3d5514dd044be27b84a148206e50c3481ee86390dbba8af194a9a2bb</string>
 
     <string name="oym">OPEN YOUR MOUTH</string>
     <string name="no_library">No photos or videos</string>
