@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.navigation.CameraFragment">
+
+    <SurfaceView
+        android:id="@+id/surfaceView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/vpSwitchTypeEffect"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.trowical.arcamera.ui.custom.GridLinesView
+        android:id="@+id/gridLines"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <include
+        android:id="@+id/layoutTop"
+        layout="@layout/layout_chronometer" />
+
+    <ImageButton
+        android:id="@+id/btnFlash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="16dp"
+        android:background="@null"
+        app:srcCompat="@drawable/ic_flash_off" />
+
+    <ImageButton
+        android:id="@+id/btnGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/btnFlash"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        app:srcCompat="@drawable/ic_grid_off" />
+
+    <ImageButton
+        android:id="@+id/btnCancelEffect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/layoutRViews"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/shape_circular_transparent"
+        android:padding="6dp"
+        android:visibility="gone"
+        app:srcCompat="@drawable/ic_close" />
+
+    <RelativeLayout
+        android:id="@+id/layoutRViews"
+        android:layout_width="match_parent"
+        android:layout_height="118dp"
+        android:layout_above="@+id/layoutBottom"
+        android:layout_centerHorizontal="true">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rViewMasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="6"
+            tools:listitem="@layout/card_effect" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rViewEffects"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="6"
+            tools:listitem="@layout/card_effect" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rViewFilters"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:clipToPadding="false"
+            android:orientation="horizontal"
+            android:visibility="gone"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            tools:itemCount="6"
+            tools:listitem="@layout/card_effect" />
+
+        <com.trowical.arcamera.ui.custom.ActionButton
+            android:id="@+id/btnTakeAction"
+            android:layout_width="76dp"
+            android:layout_height="76dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/shape_circular_stroke" />
+
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/layoutBottom"
+        layout="@layout/layout_bottom" />
+
+    <TextView
+        android:id="@+id/txtActionEffect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="26dp"
+        android:layout_marginEnd="26dp"
+        android:clickable="false"
+        android:focusable="false"
+        android:shadowColor="@android:color/black"
+        android:shadowDx="2"
+        android:shadowDy="2"
+        android:shadowRadius="2"
+        android:textAlignment="center"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
+        android:visibility="invisible" />
+
+</RelativeLayout>

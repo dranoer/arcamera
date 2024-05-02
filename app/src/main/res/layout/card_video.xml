@@ -1,0 +1,60 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="1dp"
+    android:clipChildren="false"
+    app:layout_constraintDimensionRatio="w,1:1">
+
+    <RelativeLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintDimensionRatio="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:foreground="?android:selectableItemBackground"
+            android:scaleType="centerCrop" />
+
+        <ImageButton
+            android:id="@+id/play"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerInParent="true"
+            android:animateLayoutChanges="true"
+            android:background="@drawable/shape_circular_transparent"
+            android:clickable="false"
+            android:focusable="false"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_play"
+            app:tint="@android:color/white" />
+
+        <TextView
+            android:id="@+id/txtDuration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="6dp"
+            android:background="@drawable/shape_duration"
+            android:clickable="false"
+            android:focusable="false"
+            android:gravity="center"
+            android:paddingStart="0dp"
+            android:paddingEnd="4dp"
+            android:text="00:00"
+            android:textColor="@android:color/white"
+            android:textSize="8sp"
+            app:drawableStartCompat="@drawable/ic_play"
+            tools:ignore="SmallSp" />
+
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
