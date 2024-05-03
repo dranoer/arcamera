@@ -10,6 +10,7 @@ import androidx.core.view.isVisible
 import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.gms.ads.AdRequest
 import com.trowical.arcamera.ui.custom.ActionButton
 import com.trowical.arcamera.ui.camera.CameraHelper
 import com.trowical.arcamera.ui.custom.SliderLayoutManager
@@ -101,6 +102,28 @@ class CameraFragment : Fragment(), SurfaceHolder.Callback {
         setObservers()
         setListeners()
         loadMediaItems()
+        loadBannerAd()
+    }
+
+    private fun loadBannerAd() {
+        val adView = binding.adView
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
+    }
+
+    override fun onPause() {
+        binding.adView.pause()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        binding.adView.resume()
+    }
+
+    override fun onDestroyView() {
+        binding.adView.destroy()
+        super.onDestroyView()
     }
 
     /**
