@@ -34,23 +34,24 @@
             layout="@layout/layout_chronometer" />
 
         <ImageButton
-            android:id="@+id/btnFlash"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_margin="16dp"
-            android:background="@null"
-            app:srcCompat="@drawable/ic_flash_off" />
-
-        <ImageButton
             android:id="@+id/btnGrid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/btnFlash"
-            android:layout_alignParentEnd="true"
-            android:layout_marginEnd="16dp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
             android:background="@null"
             app:srcCompat="@drawable/ic_grid_off" />
+
+        <ImageButton
+            android:id="@+id/btnFlash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@+id/btnGrid"
+            android:background="@null"
+            app:srcCompat="@drawable/ic_flash_off" />
 
         <ImageButton
             android:id="@+id/btnCancelEffect"
