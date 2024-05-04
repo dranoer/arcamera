@@ -119,6 +119,7 @@ class CameraFragment : Fragment(), SurfaceHolder.Callback {
     override fun onResume() {
         super.onResume()
         binding.adView.resume()
+        loadBannerAd()
     }
 
     override fun onDestroyView() {
@@ -360,8 +361,7 @@ class CameraFragment : Fragment(), SurfaceHolder.Callback {
         cameraHelper.setZoom(zoom)
     }
 
-    override fun surfaceCreated(holder: SurfaceHolder) {
-    }
+    override fun surfaceCreated(holder: SurfaceHolder) {}
 
     override fun surfaceChanged(holder: SurfaceHolder, format: Int, width: Int, height: Int) {
         cameraHelper.deepAR.setRenderSurface(holder.surface, Size(width, height))
